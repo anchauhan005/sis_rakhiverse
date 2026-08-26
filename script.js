@@ -1869,7 +1869,7 @@ const sisterName =
     document.getElementById("sisterName");
 
 if (sisterName) {
-    sisterName.textContent = "Naya Vagarni";
+    sisterName.textContent = "Naya Vagarni😑";
 }
 
 
