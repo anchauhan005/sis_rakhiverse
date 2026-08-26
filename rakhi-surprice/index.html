@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="A special Raksha Bandhan surprise made with love."
+    >
+
+    <title>For Aastha ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="rakhi-audio-controls" aria-label="Audio controls">
+    <button class="rakhi-audio-button is-off" id="rakhiMusicToggle" type="button"
+            aria-label="Play background music" aria-pressed="false"
+            title="Background music">♪</button>
+</div>
+<div class="rakhi-audio-volume">
+    <label for="rakhiMusicVolume">Music</label>
+    <input id="rakhiMusicVolume" type="range" min="0" max="1" step=".01" value=".38">
+</div>
+
+    <a class="skip-link" href="#memorySection">Skip to memories</a>
+    <button
+        class="music-toggle"
+        id="musicToggle"
+        type="button"
+        aria-label="Toggle background music"
+        aria-pressed="false"
+        title="Music"
+    >
+        ♫
+    </button>
+
+
+    <!-- =========================================
+         GLOBAL PARTICLES
+    ========================================== -->
+
+    <div
+        class="particles"
+        id="particles"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================
+         GLOBAL FLOATING HEARTS
+    ========================================== -->
+
+    <div
+        class="hearts"
+        id="hearts"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================
+         PHASE 1
+         WELCOME + PREMIUM RAKHI
+    ========================================== -->
+
+    <main
+        class="welcome-screen"
+        id="welcomeScreen"
+    >
+
+        <div class="welcome-content">
+
+            <p class="small-text">
+                A little surprise for someone special...
+            </p>
+
+
+            <h1>
+                For
+                <span>Ashu...</span>
+                <span class="title-heart">❤️</span>
+            </h1>
+
+
+            <p class="subtitle">
+                Made with love by your brother
+                <span>[YOUR_NAME]</span>
+            </p>
+
+
+            <!-- =====================================
+                 PREMIUM RAKHI
+            ====================================== -->
+
+            <div class="rakhi-container">
+
+                <div
+                    class="rakhi-aura"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div class="rakhi">
+
+                    <!-- LEFT THREAD -->
+
+                    <div class="rakhi-thread thread-left">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+
+                    <!-- LEFT DECORATION -->
+
+                    <div class="rakhi-side left-side">
+
+                        <div class="gold-bead"></div>
+
+                        <div class="pearl"></div>
+
+                        <div class="gold-bead small"></div>
+
+                    </div>
+
+
+                    <!-- CENTER -->
+
+                    <div class="rakhi-center">
+
+                        <div
+                            class="rakhi-ring outer-ring"
+                        ></div>
+
+
+                        <div class="petals">
+
+                            <div class="petal petal-1"></div>
+                            <div class="petal petal-2"></div>
+                            <div class="petal petal-3"></div>
+                            <div class="petal petal-4"></div>
+                            <div class="petal petal-5"></div>
+                            <div class="petal petal-6"></div>
+                            <div class="petal petal-7"></div>
+                            <div class="petal petal-8"></div>
+
+                        </div>
+
+
+                        <div class="gold-flower flower-1">
+                            ✦
+                        </div>
+
+                        <div class="gold-flower flower-2">
+                            ✦
+                        </div>
+
+                        <div class="gold-flower flower-3">
+                            ✦
+                        </div>
+
+                        <div class="gold-flower flower-4">
+                            ✦
+                        </div>
+
+
+                        <div class="jeweled-ring">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="gemstone">
+
+                            <div class="gem-shine"></div>
+
+                            <span>❤</span>
+
+                        </div>
+
+
+                        <div
+                            class="center-glow"
+                            aria-hidden="true"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- RIGHT DECORATION -->
+
+                    <div class="rakhi-side right-side">
+
+                        <div class="gold-bead small"></div>
+
+                        <div class="pearl"></div>
+
+                        <div class="gold-bead"></div>
+
+                    </div>
+
+
+                    <!-- RIGHT THREAD -->
+
+                    <div class="rakhi-thread thread-right">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- OPEN BUTTON -->
+
+            <button
+                class="open-button"
+                id="openButton"
+                type="button"
+            >
+
+                <span>
+                    Open Your Surprise
+                </span>
+
+                <span
+                    class="button-heart"
+                    aria-hidden="true"
+                >
+                    ❤️
+                </span>
+
+            </button>
+
+
+            <p class="hint">
+                Tap to begin ✨
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         PHASE 2
+         CELEBRATION
+    ========================================== -->
+
+    <section
+        class="celebration-section"
+        id="celebrationSection"
+    >
+
+        <!-- Fireworks Canvas -->
+
+        <canvas
+            id="fireworksCanvas"
+            aria-hidden="true"
+        ></canvas>
+
+
+        <!-- Flower Layer -->
+
+        <div
+            class="flower-layer"
+            id="flowerLayer"
+            aria-hidden="true"
+        ></div>
+
+
+        <!-- Celebration Content -->
+
+        <div class="celebration-content">
+
+            <div class="celebration-rakhi-symbol">
+                🪢
+            </div>
+
+
+            <p class="celebration-small">
+                Today is all about you
+            </p>
+
+
+            <h2>
+                Happy
+                <span>Raksha Bandhan</span>
+                ❤️
+            </h2>
+
+
+            <p class="celebration-message">
+                Because having a sister like you
+                is one of life's most beautiful gifts.
+            </p>
+
+
+            <div class="celebration-divider">
+                <span></span>
+                ✦
+                <span></span>
+            </div>
+
+
+            <p class="celebration-hint">
+                A few beautiful memories are waiting...
+            </p>
+
+
+            <!-- Temporary phase navigation -->
+
+            <button
+                class="continue-button"
+                id="continueButton"
+                type="button"
+            >
+                Continue to Memories
+                <span>→</span>
+            </button>
+
+        </div>
+
+
+        <!-- Bottom glow -->
+
+        <div
+            class="celebration-bottom-glow"
+            aria-hidden="true"
+        ></div>
+
+    </section>
+
+
+    <!-- =========================================
+         PHASE 3
+         MEMORY GALLERY
+    ========================================== -->
+
+    <section
+        class="memory-section"
+        id="memorySection"
+    >
+
+        <div class="memory-background-glow"></div>
+
+        <div class="memory-heading"></div>
+
+        
+        <div class="photo-section-title">
+            <span class="photo-section-eyebrow">A LITTLE SPACE FOR ASHU..</span>
+            <h2>Some Photos of You ❤️</h2>
+            <p>Just a few photos I wanted to keep here for you.</p>
+        </div>
+
+<div class="memory-grid"
+            id="memoryGrid"
+        ></div>
+
+
+        <div class="memory-footer">
+<button
+                class="letter-teaser-button"
+                id="letterTeaserButton"
+                type="button"
+            ><span>Continue</span><span>→</span></button>
+</div>
+
+    </section>
+
+
+    <!-- =========================================
+         PHASE 4
+         INTERACTIVE MEMORY LIGHTBOX
+    ========================================== -->
+
+    <div
+        class="memory-modal"
+        id="memoryModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-backdrop"
+            id="modalBackdrop"
+        ></div>
+
+
+        <div
+            class="memory-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modalMemoryTitle"
+        >
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                type="button"
+                aria-label="Close memory"
+            >
+                ×
+            </button>
+
+
+            <div class="modal-photo-wrap">
+
+                <img
+                    id="modalPhoto"
+                    src=""
+                    alt="Memory photo"
+                >
+
+                <div
+                    class="modal-photo-shine"
+                    aria-hidden="true"
+                ></div>
+
+            </div>
+
+
+            <div class="modal-memory-info">
+
+                <div class="memory-counter">
+                    <span id="modalCounter">1</span>
+                    <span>/</span>
+                    <span id="modalTotal">8</span>
+                </div>
+
+
+                <p class="modal-question">
+                    ✨✨✨
+                </p>
+
+
+                <h3 id="modalMemoryTitle">
+                    A beautiful memory
+                </h3>
+
+
+                <p
+                    class="modal-memory-message"
+                    id="modalMemoryMessage"
+                >
+                    A beautiful moment I'll always remember.
+                </p>
+
+
+                <div class="modal-divider">
+                    <span></span>
+                    <span>❤</span>
+                    <span></span>
+                </div>
+
+
+                <div class="modal-controls">
+
+                    <button
+                        class="memory-nav"
+                        id="previousMemory"
+                        type="button"
+                        aria-label="Previous memory"
+                    >
+                        ←
+                    </button>
+
+
+                    <button
+                        class="memory-heart-button"
+                        id="memoryHeartButton"
+                        type="button"
+                        aria-label="Send love"
+                    >
+                        <span>❤️</span>
+                        <small>Send Love</small>
+                    </button>
+
+
+                    <button
+                        class="memory-nav"
+                        id="nextMemory"
+                        type="button"
+                        aria-label="Next memory"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="last-memory-button"
+                    id="lastMemoryButton"
+                    type="button"
+                >
+                    Continue to the next surprise
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         PHASE 4
+         PERSONAL MESSAGE BRIDGE
+    ========================================== -->
+
+    <section
+        class="message-bridge"
+        id="messageBridge"
+    >
+
+        <div class="bridge-glow"></div>
+
+        <div class="bridge-content">
+
+            <span class="bridge-icon">💗</span>
+
+            <p class="bridge-eyebrow">
+                One last thing...
+            </p>
+
+            <h2>
+                Some friendships become family
+                <span>and ours became both.</span>
+            </h2>
+
+            <p>
+                I kept the words that mean the most
+                for the very end.
+            </p>
+
+            <button
+                class="final-letter-button"
+                id="finalLetterButton"
+                type="button"
+                aria-label="Open my Rakhi letter"
+            >
+                Open My Letter
+                <span>💌</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PHASE 5
+         THE RAKHI LETTER
+    ========================================== -->
+
+    <section class="letter-section" id="letterSection">
+
+        <div class="letter-petal-layer" aria-hidden="true"></div>
+
+        <div class="letter-intro" id="letterIntro">
+            <span class="letter-intro-heart">💌</span>
+
+            <p class="letter-eyebrow">From my heart to yours</p>
+
+            <p class="letter-story-line">From 12th, with a bond that has always felt like sisterhood.</p>
+
+            <h2>
+                A Letter
+                <span>For You</span>
+            </h2>
+
+            <p>
+                Some bonds are easier to feel than to explain.
+            </p>
+
+            <button class="open-real-letter" id="openRealLetter" type="button">
+                Open My Letter
+                <span>❤</span>
+            </button>
+        </div>
+
+        <div class="letter-scene" id="letterScene" aria-hidden="true">
+
+            <div class="letter-envelope">
+                <div class="envelope-back"></div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-front"></div>
+                <div class="envelope-heart">❤</div>
+            </div>
+
+            <article class="real-letter" id="realLetter">
+
+                <div class="letter-paper-glow"></div>
+
+                <div class="letter-paper">
+
+                    <div class="letter-paper-top">
+                        <span>♡</span>
+                        <span>Happy Raksha Bandhan</span>
+                        <span>♡</span>
+                    </div>
+
+                    <div class="letter-content">
+
+                        <p class="letter-date">With lots of love ❤️</p>
+
+                        <h3>
+                            Dear
+                            <span id="sisterName">My Sister & Friend</span>,
+                        </h3>
+
+                        <p>
+                            I don't always say it, but from the day we met in 12th,
+                            you were never just a friend to me. You were my sister too,
+                            and you knew that I was your brother.
+                        </p>
+
+                        <p>
+                            We've shared so many little moments —
+                            laughter, silly fights, annoying each other,
+                            long conversations, and countless memories.
+                            Somehow, through all of them, our friendship and sisterhood
+                            became one of the most special parts of my life.
+                        </p>
+
+                        <p>
+                            You have also been there for me when I was upset
+                            or not feeling well. You cared for me, checked on me,
+                            and made sure I was okay. And whenever I needed someone
+                            to stand by me, you took my side.
+                        </p>
+
+                        <p>
+                            On this Rakhi, I just want you to know that I'll always be there to support you,
+                            annoy you a little, listen to you, celebrate your happiness,
+                            and stand beside you whenever you need me.
+                        </p>
+
+                        <p class="letter-special-line">
+                            Some people come into our lives as friends and quietly become family.
+                            You are one of those people for me. 🌸
+                        </p>
+
+                        <p>
+                            I hope life gives you all the happiness, success and love you deserve.
+                            And I hope our friendship and sisterhood keeps creating beautiful memories.
+                        </p>
+
+                        <div class="letter-signature">
+                            <p>Happy Raksha Bandhan to my sister,</p>
+                            <strong>Your Brother & Friend ❤️</strong>
+                        </div>
+
+                    </div>
+
+                    <div class="letter-paper-bottom">
+                        Made with love, just for you ✨
+
+                        <button
+                            class="finish-letter-button"
+                            id="finishLetterButton"
+                            type="button"
+                        >
+                            Finish My Letter ❤️
+                        </button>
+                    </div>
+
+                </div>
+
+            </article>
+        </div>
+
+        <div class="letter-final-message" id="letterFinalMessage" aria-hidden="true">
+            <div class="final-heart">❤️</div>
+
+            <h3>
+                You started as a friend,
+                <span>and became a sister too.</span>
+            </h3>
+
+            <p>Happy Raksha Bandhan to my sister & my friend. 🌸</p>
+
+            
+        </div>
+
+    </section>
+
+
+<!-- =========================================================
+     FINAL BOUQUET
+========================================================= -->
+<section class="bouquet-section" id="bouquetSection">
+
+    <div class="bouquet-message">
+        <h2>A Bouquet Just For You 💐</h2>
+        <p>WITH LOVE & BEAUTIFUL MOMENTS</p>
+    </div>
+
+    <div class="bouquet-scene">
+        <div class="bouquet">
+
+            <div class="stems">
+                <div class="stem"></div><div class="stem"></div>
+                <div class="stem"></div><div class="stem"></div>
+                <div class="stem"></div><div class="stem"></div>
+
+                <div class="leaf l1"></div><div class="leaf l2"></div>
+                <div class="leaf l3"></div><div class="leaf l4"></div>
+                <div class="leaf l5"></div>
+            </div>
+
+            <div class="flower f1 red">
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="center"></div>
+            </div>
+
+            <div class="flower f2 purple">
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="center"></div>
+            </div>
+
+            <div class="flower f3">
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="center"></div>
+            </div>
+
+            <div class="flower f4 purple">
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="center"></div>
+            </div>
+
+            <div class="flower f5 red">
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="center"></div>
+            </div>
+
+            <div class="flower f6 white">
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="petal"></div><div class="petal"></div>
+                <div class="center"></div>
+            </div>
+
+            <div class="wrapper"></div>
+            <div class="ribbon"></div>
+
+        </div>
+    </div>
+
+    <p class="bouquet-note">
+        A little bouquet, because you deserve something beautiful. 🌸
+    </p>
+
+    <button
+        class="bouquet-restart"
+        id="bouquetRestart"
+        type="button"
+    >
+        Experience it again ↻
+    </button>
+
+</section>
+
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+    <audio id="rakhiMusic" loop preload="auto" aria-hidden="true">
+        <source src="assets/audio/rakhi-music.mp3" type="audio/mpeg">
+    </audio>
+    <script src="script.js" defer></script></body>
+
+</html>
